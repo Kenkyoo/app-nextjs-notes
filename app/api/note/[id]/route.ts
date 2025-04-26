@@ -21,18 +21,13 @@ export async function PATCH(
   return NextResponse.json({ message: "Updated" }, { status: 200 });
 }
 
-interface DeleteContext {
-  params: {
-    id: string;
-  };
-}
-
-export async function DELETE(req: Request, context: DeleteContext) {
-  const { id } = context.params;
+export async function DELETE(req: Request) {
+  const { id } = await req.json();
 
   await prisma.note.delete({
-    where: { id },
+    where: {
+      id: id,
+    },
   });
-
   return NextResponse.json({ message: "Deleted Item" }, { status: 200 });
 }
