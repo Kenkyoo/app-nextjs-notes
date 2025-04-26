@@ -4,24 +4,38 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "prisma generate && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
+    "@prisma/client": "^6.6.0",
+    "@teamhanko/hanko-elements": "^1.5.2",
+    "clsx": "^2.1.1",
+    "immutability-helper": "^3.1.1",
+    "jose": "^6.0.10",
+    "next": "15.3.1",
     "react": "^19.0.0",
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1",
     "react-dom": "^19.0.0",
-    "next": "15.3.1"
+    "resend": "^4.4.1",
+    "styled-components": "^6.1.17",
+    "theme-change": "^2.5.0"
   },
   "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20.17.30",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
+    "daisyui": "^5.0.27",
     "eslint": "^9",
     "eslint-config-next": "15.3.1",
-    "@eslint/eslintrc": "^3"
+    "prisma": "^6.6.0",
+    "tailwindcss": "^4",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.3"
   }
 }

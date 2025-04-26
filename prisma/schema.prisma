@@ -1,0 +1,31 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model NotesList {
+  id        String   @id @default(cuid())
+  name      String
+  userId    String
+  notes     Note[]
+  createdAt DateTime @default(now())
+}
+
+model Note {
+  userId String
+  id String @id @default(uuid())
+  title String
+  content String
+  color String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  notesListId String
+  notesList   NotesList @relation(fields: [notesListId], references: [id])
+}

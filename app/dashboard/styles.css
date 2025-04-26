@@ -1,0 +1,13 @@
+hanko-profile {
+  --container-padding: 20px;
+  --container-max-width: 600px;
+  --headline1-font-size: 24px;
+  --headline1-font-weight: 300;
+  --headline1-margin: 10px 40px;
+  --border-radius: 20px;
+  --font-size: 14px;
+  --item-height: 32px;
+  --font-weight: 500;
+  --link-color: #0969da;
+  --divider-padding: 0 20px;
+}
